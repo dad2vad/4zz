@@ -2,12 +2,12 @@
 
 
 exports.upd = async function (r) {
-    
-    if (r.cf) r = await (r.clone()).json()
+
+    var req = await (r.clone()).json()
 
 
         
-    globalThis.req = r
+    
  //
  //await app(req)
 
@@ -71,7 +71,8 @@ if (req.text && req.text.startsWith(".")) {
         req.location = req.location.latitude.toFixed(5) + "," + req.location.longitude.toFixed(5)
     }
 
-//console.info(req)
+
+console.info(req)
 // delete req.forward_from
 // delete req.forward_date
 
