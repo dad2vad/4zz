@@ -116,13 +116,13 @@ async function handleRequest(
     }
 
     // method path+params timeTaken status
-    console.log(
-      `${request.method} ${pathname + search} ${
-        response.headers.has("x-function-cache-hit")
-          ? String.fromCodePoint(0x26a1)
-          : ""
-      }${Date.now() - startTime}ms ${response.status}`,
-    );
+    // console.log(
+    //   `${request.method} ${pathname + search} ${
+    //     response.headers.has("x-function-cache-hit")
+    //       ? String.fromCodePoint(0x26a1)
+    //       : ""
+    //   }${Date.now() - startTime}ms ${response.status}`,
+    // )
 
     return response;
   } catch (error) {
