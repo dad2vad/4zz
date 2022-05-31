@@ -1,13 +1,14 @@
-name: Main
-
-on: push
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
+  release-on-push:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - uses: rymndhng/release-on-push-action@master
+        with:
+          bump_version_scheme: minor
