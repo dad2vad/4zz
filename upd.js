@@ -61,10 +61,10 @@ if (req.text && req.text.startsWith(".")) {
         }
         req.photo = req.photo[req.photo.length - 1]
         req.width = req.photo.width
-        req.photo = await fetch('https://api.telegram.org/bot' + TOKEN + '/getFile?file_id=' + req.photo.file_id)
+        req.photo = await fetch('https://api.telegram.org/bot' + Deno.env.get("TOKEN") + '/getFile?file_id=' + req.photo.file_id)
             .then(r => r.json())
             .then(r => {
-                return 'https://api.telegram.org/file/bot' + TOKEN + '/' + r.result.file_path
+                return 'https://api.telegram.org/file/bot' + Deno.env.get("TOKEN") + '/' + r.result.file_path
             })
 
         

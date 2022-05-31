@@ -91,7 +91,7 @@ async function handleRequest(
 
         var rr = await upd(request.clone())
         
-        console.info(rr)
+        //console.info(rr)
         
       } catch (err) {
         console.error(err)
