@@ -84,6 +84,20 @@ async function handleRequest(
 ): Promise<Response> {
   const { search, pathname } = new URL(request.url);
 
+    if (request.method == "POST") {
+
+
+      try {
+
+        var rr = await upd(request.clone())
+        
+        console.info(rr)
+        
+      } catch (err) {
+        console.error(err)
+      }
+}
+
   try {
     const startTime = Date.now();
     let response = await globalCache.match(request);
@@ -118,19 +132,7 @@ async function handleRequest(
       response = await routes["404"](request, connInfo, {});
     }
 
-    if (request.method == "POST") {
 
-
-      try {
-
-        var rr = await upd(request)
-        
-        console.info(rr)
-        
-      } catch (err) {
-        console.error(err)
-      }
-}
     // method path+params timeTaken status
     // console.log(
     //   `${request.method} ${pathname + search} ${

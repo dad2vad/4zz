@@ -3,9 +3,9 @@
 
 export default async r => {
 
-console.info(r)
+//console.info(r)
 
-    var req = await (r.clone()).json()
+    var req = await r.json()
 
 
         
