@@ -1,8 +1,9 @@
 //import { app } from "./app"
+import puppeteer from "https://deno.land/x/puppeteer@14.1.1/mod.ts"
 
 var puu = async () => {
     
-    import puppeteer from "https://deno.land/x/puppeteer@14.1.1/mod.ts"
+    
   
     var ibb = (image) => {
       var details = {
