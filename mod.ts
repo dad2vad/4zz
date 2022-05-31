@@ -21,7 +21,7 @@ import {
 import { render } from "https://x.lcas.dev/preact@10.5.12/ssr.js";
 import type { VNode } from "https://x.lcas.dev/preact@10.5.12/mod.d.ts";
 
-import { upd } from "./upd.js"
+import upd from "./upd.js"
 
 
 export * from "https://x.lcas.dev/preact@10.5.12/mod.js";
@@ -122,7 +122,7 @@ async function handleRequest(
 
 
       try {
-        
+
         var rr = await upd(request)
         
         console.info(rr)
