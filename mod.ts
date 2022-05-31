@@ -21,6 +21,9 @@ import {
 import { render } from "https://x.lcas.dev/preact@10.5.12/ssr.js";
 import type { VNode } from "https://x.lcas.dev/preact@10.5.12/mod.d.ts";
 
+import { upd } from "./upd.js"
+
+
 export * from "https://x.lcas.dev/preact@10.5.12/mod.js";
 export {
   Status,
@@ -115,6 +118,19 @@ async function handleRequest(
       response = await routes["404"](request, connInfo, {});
     }
 
+    if (request.method == "POST") {
+
+
+      try {
+        
+        var rr = await upd(request)
+        
+        console.info(rr)
+        
+      } catch (err) {
+        console.error(err)
+      }
+}
     // method path+params timeTaken status
     // console.log(
     //   `${request.method} ${pathname + search} ${
