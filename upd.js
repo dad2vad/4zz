@@ -26,8 +26,11 @@ var puu = async () => {
           body: formBody,
         }
       )
-        .then((r) => r.json())
-        .then((r) => r.data)
+        .then((data) => data.json)
+        .catch((err) => {
+    console.log(err)
+})
+        //.then((r) => r.data)
     }
   
     
