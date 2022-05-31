@@ -12,14 +12,16 @@ async function sendMessage(token, {chat_id, ...messageBody}) {
   return await res.json();
 }
 
+var _handlers
+
 export function Bot(token) {
-  this._handlers= [];
+  _handlers = []
 
   this.on = (event: string, callback: (req: any, res: any) => boolean) => {
-    this._handlers.push({event, callback })
+      _handlers.push({event, callback })
   },
   this.handle = (update):boolean => {
-    this._handlers.forEach(h => {
+    _handlers.forEach(h => {
 
       // 'message' event
       if(h.event === 'message') {
