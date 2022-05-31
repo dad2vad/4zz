@@ -1,7 +1,7 @@
 //import { app } from "./app"
 
 
-exports.upd = async function (r) {
+var upd = async function (r) {
 
     var req = await (r.clone()).json()
 
@@ -78,3 +78,5 @@ console.info(req)
 
   
 }
+
+export default upd
