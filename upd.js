@@ -1,5 +1,5 @@
 //import { app } from "./app"
-import puppeteer from "https://deno.land/x/puppeteer@14.1.1/mod.ts"
+import puppeteer from "https://deno.land/x/puppeteer_ts/mod.ts"
 
 var puu = async () => {
     
