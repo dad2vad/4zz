@@ -1,7 +1,9 @@
 //import { app } from "./app"
 
 
-const _upd = async r => {
+export default async r => {
+
+console.info(r)
 
     var req = await (r.clone()).json()
 
@@ -79,6 +81,6 @@ console.info(req)
   
 }
 
-const upd = _upd()
+// const upd = _upd()
 
-export default upd
+// export default upd
