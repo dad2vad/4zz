@@ -1,53 +1,53 @@
 //import { app } from "./app"
-import puppeteer from "https://deno.land/x/puppeteer_plus/core.ts"
+// import puppeteer from "https://deno.land/x/puppeteer_plus/core.ts"
 
-var puu = async () => {
+// var puu = async () => {
     
     
   
-    var ibb = (image) => {
-      var details = {
-        image: image.split(",")[1] || image.split(",")[0],
-      }
-      var formBody = []
-      for (var property in details) {
-        var encodedKey = encodeURIComponent(property)
-        var encodedValue = encodeURIComponent(details[property])
-        formBody.push(encodedKey + "=" + encodedValue)
-      }
-      formBody = formBody.join("&")
-      return fetch(
-        `https://api.imgbb.com/1/upload?key=af7cad64d90d19e2a26889f92f6b3ed8`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-          },
-          body: formBody,
-        }
-      )
-        .then((data) => data.json)
-        .catch((err) => {
-    console.log(err)
-})
-        //.then((r) => r.data)
-    }
+//     var ibb = (image) => {
+//       var details = {
+//         image: image.split(",")[1] || image.split(",")[0],
+//       }
+//       var formBody = []
+//       for (var property in details) {
+//         var encodedKey = encodeURIComponent(property)
+//         var encodedValue = encodeURIComponent(details[property])
+//         formBody.push(encodedKey + "=" + encodedValue)
+//       }
+//       formBody = formBody.join("&")
+//       return fetch(
+//         `https://api.imgbb.com/1/upload?key=af7cad64d90d19e2a26889f92f6b3ed8`,
+//         {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+//           },
+//           body: formBody,
+//         }
+//       )
+//         .then((data) => data.json)
+//         .catch((err) => {
+//     console.log(err)
+// })
+//         //.then((r) => r.data)
+//     }
   
     
   
-    const browser = await puppeteer.launch()
-    const page = await browser.newPage()
-    await page.setViewport({ width: 1280, height: 800 })
-    await page.goto("https://danube-webshop.herokuapp.com", {
-      waitUntil: "networkidle2",
-    })
-    var rr = await page.screenshot({ encoding: "base64", fullPage: true })
-    rr = await ibb(rr)
+//     const browser = await puppeteer.launch()
+//     const page = await browser.newPage()
+//     await page.setViewport({ width: 1280, height: 800 })
+//     await page.goto("https://danube-webshop.herokuapp.com", {
+//       waitUntil: "networkidle2",
+//     })
+//     var rr = await page.screenshot({ encoding: "base64", fullPage: true })
+//     rr = await ibb(rr)
   
-    console.log(rr)
+//     console.log(rr)
   
-    await browser.close()
-  }
+//     await browser.close()
+//   }
 
 
 export default async r => {
@@ -104,7 +104,7 @@ if (req.text && req.text.startsWith(".")) {
         //  var t = ""
         // if(req.caption) t += `b_rgb:21211f,c_fit,co_white,fl_relative,g_north,l_text:Yanone%20Kaffeesatz_50_center:${req.caption.toUpperCase().replace(/ /g, '%20').replace(/,/g, '%20')},w_960/`
         if (!req.caption) {
-            await puu()
+            //await puu()
             req.caption = ""
         } else {
             req.caption = req.caption.toLowerCase()
